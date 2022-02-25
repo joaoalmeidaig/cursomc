@@ -1,11 +1,8 @@
-package com.joao.domain;
+package com.joao.cursomc.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @NoArgsConstructor
@@ -13,7 +10,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @EqualsAndHashCode
-@Entity(name = "Categoria")
+@Entity
 public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
 
