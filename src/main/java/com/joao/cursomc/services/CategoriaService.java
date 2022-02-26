@@ -1,5 +1,6 @@
 package com.joao.cursomc.services;
 
+import com.joao.cursomc.ObjectNotFountException.ObjectNotFoundException;
 import com.joao.cursomc.domain.Categoria;
 import com.joao.cursomc.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,6 @@ public class CategoriaService {
 
     public Categoria buscar(Integer id){
         Optional<Categoria> obj = repository.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Obejto não encontrado ID: " + id + "Tipo:" + Categoria.class.getName()));
     }
 }
