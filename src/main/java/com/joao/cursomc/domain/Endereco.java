@@ -1,5 +1,6 @@
 package com.joao.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,7 @@ public class Endereco implements Serializable {
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
